@@ -17,8 +17,10 @@ router.post("/", [check("email").isEmail()], async (req, res) => {
 
   // 에러가 있으면 배열 형식으로 보기위함
   if (!errors.isEmpty()) {
+    console.log("")
     return res.status(400).json({
       errors: errors.array(),
+      
     });
   }
 
